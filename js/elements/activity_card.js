@@ -79,11 +79,20 @@ class ActivityCard extends HTMLElement {
                     </p>
 
 
+                <details class="summary-box" open>
+                    <summary class="summary-box__summary-title">Initial Hedrine text</summary>
+                    <textarea class="summary-box__summary-text initial-hedrine-text"></textarea>
+                    <div class="summary-box__copy-button" title="copy">
+                        <img class="summary-box__copy-button__copy-icon" 
+                            src="../../assets/copy.svg"></img>
+                    </div>
+                </details>
+
                 <h3>Interaction Summary</h3>
 
                 <details class="summary-box" open>
                     <summary class="summary-box__summary-title">English summary</summary>
-                    <textarea class="summary-box__summary-text">${d.translations.english_text.trimStart()}</textarea>
+                    <textarea class="summary-box__summary-text english-summary-text">${d.translations.english_text.trimStart()}</textarea>
                     <div class="summary-box__copy-button" title="copy">
                         <img class="summary-box__copy-button__copy-icon" 
                             src="../../assets/copy.svg"></img>
@@ -93,7 +102,7 @@ class ActivityCard extends HTMLElement {
 
                 <details class="summary-box" open>
                     <summary class="summary-box__summary-title">French summary</summary>
-                    <textarea class="summary-box__summary-text">${d.translations.french_text.trimStart()}</textarea>
+                    <textarea class="summary-box__summary-text french-summary-text">${d.translations.french_text.trimStart()}</textarea>
                     <div class="summary-box__copy-button" title="copy">
                         <img class="summary-box__copy-button__copy-icon" 
                             src="../../assets/copy.svg"></img>
@@ -273,6 +282,9 @@ class ActivityCard extends HTMLElement {
             doi: this._data.metadata.doi,
             checks: checkboxes,
             manual_babine_score: this.querySelector('.errors-box__errors-section input[type="text"]').value,
+            initial_hedrine_text: this.querySelector('.initial-hedrine-text').value,
+            english_summary: this.querySelector('.english-summary-text').value,
+            french_summary: this.querySelector('.french-summary-text').value,
             herb_drug_fields: fields,
             error_types: errorTypes,
             other_errors: this.querySelector('.errors-box__other-errors').value
